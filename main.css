@@ -1,0 +1,18 @@
+.headeri{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.faqja{
+    flex-basis: 100%;
+    margin-top: 30px;
+    justify-content: right;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    z-index: 999;
+}
