@@ -1,0 +1,63 @@
+.fillimi{
+    text-align: end;
+    color: white;
+    background-color: rgb(17, 17, 65);
+    margin: auto;
+    padding: 20px;
+    
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;    
+}
+.previous{
+    display: inline-block;
+    color: azure;
+    background-color: azure;
+    border-radius: 50px;   
+}
+.shkrimi{
+    color: azure;
+    background-color: rgb(17, 17, 65);
+
+}
+.Login{
+    border-radius: 20px;
+}
+.foto{
+    text-align: center;
+}
+.logini{
+    
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+    
+}
+
+.Email{
+    text-align: center;
+}
+.Paswordi{
+    text-align: center;
+}
+.Submit{
+    text-align: center;
+}
+.Login{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: navy;
+    border-radius: 52px;
+    
+}
+
+.fundi{
+    align-items: center;
+    background-color: rgb(17, 17, 65);
+}
