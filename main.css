@@ -16,3 +16,13 @@
     position: relative;
     z-index: 999;
 }
+.footeri{
+    background-color: cornflowerblue;
+    color: azure;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
