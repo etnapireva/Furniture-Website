@@ -9,7 +9,7 @@
 
 } */ */
 
-/* .faqja{
+.faqja{
     flex-basis: 100%;
     margin-top: 30px;
     justify-content: right;
@@ -18,8 +18,8 @@
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     position: relative;
-     z-index: 999; 
-} */
+    z-index: 999;
+}
 .footeri{
     background-color: rgb(241, 189, 124);
     color: azure;
@@ -38,10 +38,6 @@
    height: 100%; */
    min-height: 0.5vh;
    text-align: center;
-   display: flex;
-            justify-content: space-between;
-            
-            flex-wrap: wrap;
   
 
 }
@@ -84,11 +80,6 @@ footer {
 .fotomebuton{
     position: relative;
     margin-top: -10px;
-    display: flex;
-            justify-content: space-between;
-            align-items: center;
-            
-            flex-wrap: wrap;
 }
 
 
@@ -96,11 +87,7 @@ footer {
     width:100%;
     max-width: 100%;
     height:auto;
-    /* display: block; */
-    display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+    display: block;
      /* object-fit: cover;  
     max-width: 100%;
     height: auto; */
@@ -117,6 +104,5 @@ footer {
     background-color: #333;
     color: white;
     z-index: 1;
-  
     
 } 
