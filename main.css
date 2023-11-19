@@ -17,7 +17,7 @@
     z-index: 999;
 }
 .footeri{
-    background-color: cornflowerblue;
+    background-color: rgb(241, 189, 124);
     color: azure;
     display: flex;
 	flex-direction: column;
@@ -25,4 +25,44 @@
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
+}
+
+.main{
+   background-image: url('C:\Users\HP-650 G1\Downloads\IMG_5212.jpg');
+   background-size: cover;
+   background-position: center;
+   height: 100%;
+}
+
+footer {
+    background-color: floralwhite;
+    padding: 20px;
+    text-align: center;
+}
+
+.footeri{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lokacioni{
+    display: flex;
+    align-items: center;
+}
+.kontakti{
+    display: flex;
+    align-items: center;
+}
+
+.lokacioni img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.kontakti img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
