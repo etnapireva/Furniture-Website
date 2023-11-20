@@ -31,20 +31,20 @@
 	align-content: stretch;
 }
 
-.main{
-   /* background-image: url('C:\Users\HP-650 G1\Downloads\IMG_5212.jpg'); */
-   /* background-size: cover;
+/* .main{ 
+   background-image: url('C:\Users\HP-650 G1\Downloads\IMG_5212.jpg');
+    background-size: cover;
    background-position: center;
-   height: 100%; */
-   min-height: 0.5vh;
+   height: 100%; 
+    min-height: 0.5vh;
    text-align: center;
    display: flex;
             justify-content: space-between;
             
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
   
 
-}
+ }  */
 
 footer {
     background-color: floralwhite;
@@ -81,7 +81,7 @@ footer {
     margin-right: 5px;
 }
 
-.fotomebuton{
+/* .fotomebuton{
     position: relative;
     margin-top: -10px;
     display: flex;
@@ -95,13 +95,13 @@ footer {
     max-width: 500%;
     height:auto;
    /* display: block; */
-   display: flex;
+   /* display: flex;
    justify-content: space-between;
    align-items: center;
    flex-wrap: wrap;
   
- }
-.butoniblej{
+ } */
+/* .butoniblej{
     position: absolute;
     transform: translate(-50%,-50%);
     text-decoration: none;
@@ -114,6 +114,20 @@ footer {
     z-index: 1;
   
     
-} 
+}  */ 
+
+.foto1{
+    width: 20%;
+    height: 100vh;
+    border: 1px solid #100;
+    box-sizing: border-box;
+    float: left;
+}
+
+.foto1 img{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
 
   
