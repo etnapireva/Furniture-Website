@@ -1,4 +1,4 @@
- /* .headeri{
+ .headeri{
      display: flex;
     flex-wrap: wrap;
     flex-direction: row; 
@@ -7,7 +7,7 @@
     
 
 
-}  */
+} 
 
  /* .faqja{
     flex-basis: 100%;
@@ -24,6 +24,8 @@
  
 
 .mainpage {
+  justify-content: center;
+  flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     justify-content: center;
