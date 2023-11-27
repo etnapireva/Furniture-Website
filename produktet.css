@@ -1,11 +1,10 @@
-/* Reset some default styles */
 body,
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* Basic styles for header and navigation */
+
 header {
   background-color: #f4f4f4;
   padding: 20px;
