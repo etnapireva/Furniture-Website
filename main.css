@@ -102,13 +102,12 @@
     text-decoration: none;
     text-align: center;
     color: #a1a1a1;
-    padding: 10px 20px;
-  }
- 
-  
+    padding: 10px 20px;}
+    footer{
+      margin-top: auto;
+    }
   .foto11{
     align-items: end;
     width: 5%;
     height: 5%;
   }
-  
