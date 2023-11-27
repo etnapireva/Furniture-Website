@@ -9,20 +9,12 @@
 
 } 
 
- /* .faqja{
-    flex-basis: 100%;
-    margin-top: 30px;
-    justify-content: right;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    position: relative;
-     z-index: 999;
- } */
 
- 
-
+.Labelat{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
 .mainpage {
   justify-content: center;
   flex-wrap: wrap;
@@ -96,7 +88,7 @@
     font-size: 20px;
     color: #000000;
     text-transform: uppercase;
-    margin: 10px 0;
+    margin: 10px ;
   }
   .linksfooteri .links a {
     text-decoration: none;
