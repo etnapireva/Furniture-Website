@@ -13,7 +13,7 @@ flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 520px;
-    background: linear-gradient(to bottom, rgba(80, 77, 77, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("Fotomain.jpeg");
+    background: linear-gradient(to bottom, rgba(80, 77, 77, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("file:///C:/Users/HP-650%20G1/Downloads/IMG_5212%20(2).jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ flex-wrap: wrap;
   .mainpage h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 60px;
-    color: #fff;
+    color: rgb(255, 255, 255);
     margin: 0;
   }
   
@@ -37,7 +37,7 @@ flex-wrap: wrap;
   
   
   .butoni{
-    background-color: #333030;
+    background-color: rgb(71, 50, 50);
     color: #ffffff;
     padding: 10px 25px;
     border: none;
@@ -91,4 +91,32 @@ flex-wrap: wrap;
     align-items: end;
     width: 5%;
     height: 5%;
+  }
+  .about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 80px;
+    border-top: 2px solid #eeeeee;
+  }
+  
+  .about-us img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .about-us-text h2 {
+    font-size: 30px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .about-us-text p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: #585858;
+    margin: 10px 0;
   }
