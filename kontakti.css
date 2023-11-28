@@ -1,3 +1,7 @@
+.Labelat{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;}
 .footeri {
     display: flex;
     justify-content: space-between;
