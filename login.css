@@ -8,7 +8,7 @@
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;    
 }
 /*.headeri{
@@ -19,6 +19,8 @@
    background-color: white; 
    
 }  */
+
+
 
 
 .Labelat{
@@ -119,3 +121,67 @@
     width: 5%;
     height: 5%;
   }
+
+  .logoheader{
+    width: 50px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+
+  header{
+    background-color: rgb(255, 255, 255);
+     color: rgb(71, 50, 50);
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 10vh;
+     flex-wrap: wrap;
+     
+
+     
+     
+
+     
+  } 
+  header h1{
+     font-family: 'Times New Roman', Times, serif;
+     display: flex;
+     flex-wrap: wrap;
+     margin: 0;
+     font-weight: 500;
+     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+     
+     
+     
+ } 
+ header nav{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+ }
+
+
+ header nav a{
+     color: rgb(5, 5, 27);
+     text-decoration: none;
+     margin-left: 20px;
+     display: flex;
+     flex-wrap: wrap;
+     
+   
+     
+    
+ }
+ header img {
+     width: 70px;
+     height: auto;
+     
+     margin-right: 20px;
+     display: flex;
+     flex-wrap: wrap;
+
+   
+ }
