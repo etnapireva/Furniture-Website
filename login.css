@@ -1,4 +1,4 @@
-.fillimi{
+/* .fillimi{
     text-align: end;
     color: white;
     background-color: white;
@@ -10,8 +10,8 @@
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;    
-}
-/*.headeri{
+} */
+/* .headeri{
     display: flex;
    flex-wrap: wrap;
    flex-direction: row; 
@@ -23,13 +23,14 @@
 
 
 
-.Labelat{
+ .Labelat{
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
-.previous{
+/* .previous{
     display: inline-block;
     color: white;
     background-color: white;
@@ -73,7 +74,7 @@
     background-color: navy;
     border-radius: 52px;
     
-}
+} */ 
 
 .footeri {
     display: flex;
