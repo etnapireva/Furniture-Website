@@ -122,3 +122,129 @@ main{
   background: rgb(226,196,143);
   background: linear-gradient(0deg, rgba(226,196,143,1) 0%, rgba(191,169,129,1) 31%, rgba(244,239,230,1) 100%);
 }
+
+
+
+
+    
+ 
+
+/* For iPhone 14 Max */
+@media screen and (max-width: 428px) {
+  header {
+    height: 40px; 
+  }
+
+  header h1 {
+    font-size: 20px; /* Adjust header font size */
+  }
+
+  header nav ul {
+    display: none; /* Hide navigation links by default */
+  }
+
+  header nav {
+    position: relative; /* Adjust navigation position */
+  }
+
+  header nav ul {
+    position: absolute; /* Position navigation links absolutely */
+    top: 40px; /* Adjust top position to appear below the header */
+    left: 0;
+    background: #fff; /* Add background color for better visibility */
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for visibility */
+  }
+
+ 
+
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .product {
+    width: 90%; /* Adjust width of each product */
+    margin: 10px auto; /* Add margin for spacing between products */
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
+  }
+
+  .product img {
+    width: 100%; /* Ensure images take the full width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .footeri {
+    padding: 10px; /* Adjust padding in the footer */
+  }
+
+  .linksfooteri {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust space between social links */
+  }
+
+  .foto11 img {
+    width: 30px; /* Adjust social media icon size */
+  }
+  body{
+    
+      background: linear-gradient(0deg, rgba(244, 239, 230, 1) 0%, rgba(244, 239, 230, 1) 100%);
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    overflow-x: hidden;
+    background-size: 100%;
+  }
+
+  
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .product {
+    width: 45%;
+    margin: 10px 0;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footeri {
+    padding: 10px; /* Adjust padding in the footer */
+  }
+
+  .linksfooteri {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Adjust space between social links */
+  }
+
+  .foto11 img {
+    width: 25px; /* Adjust social media icon size */
+  }
+
+  .links {
+    text-align: center; /* Center-align the links */
+  }
+img{
+  overflow-clip-margin: content-box;
+}
+  
+}
+
+
+
+
+
+

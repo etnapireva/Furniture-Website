@@ -13,7 +13,7 @@ flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 520px;
-    background: linear-gradient(to bottom, rgba(80, 77, 77, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("Fotomain.jpeg");
+    background: linear-gradient(to bottom, rgba(80, 77, 77, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("Fotomain.jpeg" );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -120,3 +120,160 @@ flex-wrap: wrap;
     color: #585858;
     margin: 10px 0;
   }
+
+/* For smaller screens (up to 767px width)  */
+ @media screen and (max-width: 767px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  header nav a {
+    margin: 10px 0;
+  }
+
+  .mainpage {
+    height: auto;
+    padding: 40px;
+    text-align: center;
+  }
+  .mainpage h1 {
+    font-size: 40px;
+  }
+  .mainpage p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  .butoni {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+
+  .footeri {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .linksfooteri {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .linksfooteri .links {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .linksfooteri .links span {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  .linksfooteri .links a {
+    padding: 5px 10px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .about-us img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .about-us-text h2 {
+    font-size: 24px;
+  }
+  .about-us-text p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+
+
+/* For larger screens like iPads (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+ 
+
+  header {
+    height: 8vh; 
+  }
+
+  header nav {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+ .mainpage{
+  width: 100vw;
+  height: 520px;
+  background-size: cover;
+ }
+
+  .mainpage h1 {
+    font-size: 36px;
+  }
+
+  .mainpage p {
+    font-size: 16px;
+  }
+
+  .footeri {
+    padding: 20px 40px;
+  }
+
+  .linksfooteri {
+    padding: 10px 0;
+  }
+
+  .linksfooteri .links {
+    padding: 8px 0;
+  }
+
+  .about-us {
+    padding: 20px 40px;
+  }
+}
+
+/* For iPad Air */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  /* Adjustments for iPad Air */
+
+  header {
+    height: 8vh; 
+  }
+
+  header nav {
+    
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .mainpage {
+    width: 1500px;
+    height: 600px;
+    background-size: cover;
+    background: linear-gradient(to bottom, rgba(80, 77, 77, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("Fotomain.jpeg" );
+  
+  }
+
+  .footeri {
+    padding: 20px 40px;
+  }
+
+  .linksfooteri {
+    padding: 10px 0;
+  }
+
+  .linksfooteri .links {
+    padding: 8px 0;
+  }
+
+  .about-us {
+    padding: 20px 40px;
+  }
+  
+  
+}
+
+
