@@ -6,23 +6,26 @@ ul {
 
 
 header {
-  color: #ffffff;
-  background: rgb(122,94,55);
-background: radial-gradient(circle, rgba(122,94,55,1) 0%, rgba(102,76,40,1) 59%, rgba(108,102,67,1) 100%);
+  color: #7c4c4c;
+  background: rgba(244,239,230,1);
+background: rgba(244,239,230,1);
   padding: 20px;
   text-align: center;
 }
 
 nav ul {
   list-style: none;
+  color: #7c4c4c;
 }
 
 nav ul li {
   display: inline;
   margin-right: 20px;
+  color: #7c4c4c;
 }
 section {
   margin: 40px 0;
+  color: #7c4c4c;
 }
 
 h2 {
@@ -48,6 +51,11 @@ h2 {
   justify-content: space-evenly; 
   gap: 10px;
   
+}
+
+.product p{
+  font-style: italic;
+  color: rgb(134, 83, 83);
 }
 
 .product img {
@@ -104,18 +112,18 @@ h2 {
 
 
   a {
-    color: rgb(255, 255, 255); 
+    color: rgb(117, 73, 73); 
     text-decoration: none;
   }
   
   
   a:visited {
-    color: rgb(255, 255, 255); 
+    color: rgb(99, 61, 61); 
   }
   
   
   a:hover {
-    color: red; /* kur ta afrojsh kursorin del ngjyra */
+    color: rgb(180, 59, 59); /* kur ta afrojsh kursorin del ngjyra */
   }
 
 main{
