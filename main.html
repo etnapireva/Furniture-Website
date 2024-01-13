@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="main.css">
+    
     <style>
 
 
@@ -101,9 +102,35 @@
             height: auto;
         }
 
-     
-        
+        [data-component="slideshow"] .slide {
+    display: none;
+  }
 
+  [data-component="slideshow"] .slide.active {
+    display: block;
+  }
+
+  #slideshow-example{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+ 
+.slider {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+ slide{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  width: auto;
+ }
+        
+        
      
     </style>
 </head>
@@ -137,33 +164,49 @@
             <div><a class="butoni" href="produktet.html">BLEJ KETU<a\></a></div>
           </div>
 
+          <main>
+
           <div class="about-us">
             <div class="about-us-text">
               <h2>Rreth Nesh</h2>
-              <p>Mobileria HSM u themelua në vitin 1920 me pasion dhe dedikim për të prodhuar mobilje cilësore të cilat shprehnin elegancën dhe kreativitetin në çdo detaj. Me një angazhim të pakursyer për cilësinë dhe detajet më të vogla, mobileria fillimisht filloi të prodhojë dhe të shpërndajë mobilje me një dizajn të ndryshëm, të cilat shpejt fituan vlerësim dhe popullaritet të gjerë. Shitja zyrtare e produktit të parë Mobileria HSM nisi në vitin 1988, kur u bë një emër i njohur për cilësinë dhe inovacionin në botën e mobiljeve.</p>
-               <br> <br> <br> <br>
+              <p>Mobileria HSM u themelua në vitin 1920 me pasion dhe dedikim për të prodhuar mobilje cilësore të cilat shprehnin elegancën dhe kreativitetin në çdo detaj.</p>
+              <p>Me një angazhim të pakursyer për cilësinë dhe detajet më të vogla, mobileria fillimisht filloi të prodhojë dhe të shpërndajë mobilje me një dizajn të ndryshëm</p>
+               <p>Shitja zyrtare e produktit të parë Mobileria HSM nisi në vitin 1988, kur u bë një emër i njohur për cilësinë dhe inovacionin në botën e mobiljeve</p>
+              <br> <br> <br> <br>
               <h2>Një Trashëgimi e Mobiljeve të Shkëlqyera</h2>
-              <p>Faqja jonë përmban një koleksion tërheqës të mobiljeve të klasit të lartë, të cilat përfaqësojnë një trashëgimi të cilësisë dhe dizajnit të shkëlqyer. Çdo produkt është zgjedhur me kujdes për të ofruar elegancë, përshtatshmëri dhe qëndrueshmëri në çdo shtëpi. Ne angazhohemi për të sjellë jo vetëm mobilje, por edhe një përvojë të shkëlqyer të blerjes dhe shërbimit për klientët tanë, duke ofruar zgjidhje të personalizuara për nevojat e tyre të brendshme.</p>
+              <p>Faqja jonë përmban një koleksion tërheqës të mobiljeve të klasit të lartë, të cilat përfaqësojnë një trashëgimi të cilësisë dhe dizajnit të shkëlqyer.</p>
+              <p>Çdo produkt është zgjedhur me kujdes për të ofruar elegancë, përshtatshmëri dhe qëndrueshmëri në çdo shtëpi</p>
+              <p>Ne angazhohemi për të sjellë jo vetëm mobilje, por edhe një përvojë të shkëlqyer të blerjes klientët tanë, duke ofruar zgjidhje të personalizuara për nevojat.</p>
+
+            
+            <br>
+
+            <br>
+
+            <div id="slideshow-example" data-component="slideshow">
+              <div role="list">
+                <div class="slide">
+                  <img src="fotoperslider1.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="fotoperslider2.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="fotoperslider3.jpg.jpg" alt="">
+                </div>
+              </div>
             </div>
-
-            <img src="furnitureabousus.jpg" alt="me">
-          </div>
-           
+          <script src="main.js"></script>
           
-         </main>    
-    </body>
-
-    <body>
-        <div class="main"></div>
-        <div class="fotomebuton">
-        <!-- <img src="Fotomain.jpg" alt=""> -->
-        <!-- <a href="C:\Users\HP-650 G1\Desktop\projekti web\Furniture-Website\faqjapershopping.html" class="butoniblej">BLEJ KETU</a> -->
-    </div>
-</div>
-
-
-
-<footer class="footeri">
+          
+          </body>
+          
+         </main>   
+         
+         
+        
+        
+  <footer class="footeri">
 
     <div class="copy">&copy; 2023</div>
 
