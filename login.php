@@ -1,61 +1,26 @@
 <?php
-include 'db.php';
+class UserAuthentication {
+    private $conn;
 
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) && isset($_POST["registerPassword"]) && isset($_POST["confirmPassword"])) {
-    $username = mysqli_real_escape_string($conn, $_POST["registerUsername"]);
-    $password = mysqli_real_escape_string($conn, $_POST["registerPassword"]);
-    $confirmPassword = mysqli_real_escape_string($conn, $_POST["confirmPassword"]);
-
-    
-    if ($password != $confirmPassword) {
-        echo "Passwords do not match.";
-    } else {
-        
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        
-        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')";
-
-        if (mysqli_query($conn, $sql)) {
-            echo "<p>Registration successful! Now you can log in.</p>";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
+    public function __construct($conn) {
+        $this->conn = $conn;
     }
-}
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && isset($_POST["loginPassword"])) {
-    $username = mysqli_real_escape_string($conn, $_POST["loginUsername"]);
-    $password = mysqli_real_escape_string($conn, $_POST["loginPassword"]);
-
-    
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $user = mysqli_fetch_assoc($result);
-
+    public function registerUser($username, $password, $confirmPassword) {
        
-        if (password_verify($password, $user['password'])) {
-          
-            header("Location: main.php");
-            exit();
-        } else {
-            echo "Incorrect password.";
-        }
-    } else {
-        echo "User not found.";
+    }
+
+    public function loginUser($username, $password) {
+        
     }
 }
 
+
+$userAuth = new UserAuthentication($conn);
+$userAuth->registerUser($_POST["registerUsername"], $_POST["registerPassword"], $_POST["confirmPassword"]);
+$userAuth->loginUser($_POST["loginUsername"], $_POST["loginPassword"]);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
