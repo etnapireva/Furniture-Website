@@ -2,7 +2,7 @@
 $host = "localhost"; 
 $username = "root";
 $password = "";
-$database = "limon";
+$database = "projekti-web";
 
 // Create a database connection
 $conn = new mysqli($host, $username, $password, $database);
