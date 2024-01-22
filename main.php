@@ -13,7 +13,7 @@
 
     <main>
         <div class="mainpage">
-            <h1>Mobileria HSM</h1>
+            <h1>Mobileria HSM.</h1>
             <p>Lider ne kualitet.</p>
             <div><a class="butoni" href="produktet.html">BLEJ KETU<a\></a></div>
         </div>
