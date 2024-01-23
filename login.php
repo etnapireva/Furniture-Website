@@ -1,26 +1,67 @@
 <?php
-class UserAuthentication {
-    private $conn;
+include 'db.php';
 
-    public function __construct($conn) {
-        $this->conn = $conn;
+class User {
+    private $db;
+
+ 
+    public function __construct($db) {
+        $this->db = $db;
     }
 
+   
     public function registerUser($username, $password, $confirmPassword) {
-       
+        if ($password != $confirmPassword) {
+            echo "Passwords do not match.";
+        } else {
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')";
+
+            if ($this->db->conn->query($sql)) {
+                echo "<p>Registration successful! Now you can log in.</p>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $this->db->conn->error;
+            }
+        }
     }
 
+ 
     public function loginUser($username, $password) {
-        
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $result = $this->db->conn->query($sql);
+
+        if ($result && $result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+
+            if (password_verify($password, $user['password'])) {
+               
+                header("Location: main.php");
+                exit();
+            } else {
+                echo "Incorrect password.";
+            }
+        } else {
+            echo "User not found.";
+        }
     }
 }
 
 
-$userAuth = new UserAuthentication($conn);
-$userAuth->registerUser($_POST["registerUsername"], $_POST["registerPassword"], $_POST["confirmPassword"]);
-$userAuth->loginUser($_POST["loginUsername"], $_POST["loginPassword"]);
-?>
+$database = new Database();
 
+
+$user = new User($database);
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) && isset($_POST["registerPassword"]) && isset($_POST["confirmPassword"])) {
+    $user->registerUser($_POST["registerUsername"], $_POST["registerPassword"], $_POST["confirmPassword"]);
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && isset($_POST["loginPassword"])) {
+    $user->loginUser($_POST["loginUsername"], $_POST["loginPassword"]);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
