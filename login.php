@@ -122,9 +122,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && is
         }
 
     </style>
+    <?php include 'header.php'; ?>
 </head>
 <body>
-<?php include 'header.php'; ?>
+
 
     <div class="login-container">
         <form id="loginForm" method="post">
@@ -144,29 +145,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && is
     </div>
 
     
-
-    <footer class="footeri">
-  
-           <div class="copy">&copy; 2023</div>
-      
-           <div class="linksfooteri">
-             <div class="links">
-               <span>Me shume informacion</span>
-               <a href="main.html">Faqja Kryesore</a>
-               <a href="about.html">Rreth Nesh</a>
-               <a href="kontakti.html">Kontakti</a>
-               <a href="https://www.google.com/maps/place/Shopping+Center/@42.5804138,21.5791574,19.29z/data=!4m6!3m5!1s0x1354e97970c00001:0xe61bd806fd271c52!8m2!3d42.5801333!4d21.579156!16s%2Fg%2F11kj8__xrb?entry=ttu">Lokacioni </a>
-             </div>
-      
-             <div class="links">
-               <span>Rrjetet sociale</span>
-               <a class="foto11"   href="https://www.facebook.com/halitismofficial"><img src="Facebook Logo.png" alt="" width="10%" height="5%"> Na ndiqni në Facebook</a>
-               <a class="foto11" href="https://www.tiktok.com/@mobileriahaliti"><img src="TikTok logo.png" alt="" width="8%" height="5%"> Na ndiqni në TikTok</a>
-               <a class="foto11" href="https://www.instagram.com/haliti_s.m/?ref=www.localsbarguide.com&hl=da"><img src="Instagram Logo.png" alt="" width="5%" height="5%"> Na ndiqni në Instagram</a>
-            
-           </div>
-           </div>
-         </footer>
+<?php 
+include 'footer.php';
+?>
 
 </body>
 </html>
