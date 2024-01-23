@@ -47,7 +47,7 @@ class User {
 }
 
 
-$database = new Database();
+$database = new $database();
 
 
 $user = new User($database);
