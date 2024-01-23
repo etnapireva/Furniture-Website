@@ -14,7 +14,8 @@
                 <a href="https://www.instagram.com/haliti_s.m/?ref=www.localsbarguide.com&hl=da" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
         </div>
-        <style>/* Footer */
+        <style>
+        /* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
