@@ -1,4 +1,21 @@
 <?php
+
+session_start();
+
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] === 'admin') {
+        // Kyçur si admin, veprimet për admin
+        echo "You are logged in as an admin.";
+    } else {
+        // Kyçur si përdorues i thjeshtë, veprimet për përdoruesin e thjeshtë
+        echo "You are logged in as a regular user.";
+    }
+} else {
+    // Përdoruesi nuk është kyçur, veprimet për një vizitor të panjohur
+    echo "You are not logged in.";
+}
+
+
 include 'db.php';
 
 class User {
@@ -40,37 +57,20 @@ class User {
 
             if (password_verify($password, $user['password'])) {
                
+                $_SESSION['role'] = $user['role'];
                 header("Location: main.php");
                 exit();
             } else {
                 echo "Incorrect password.";
             }
-        } else {
-            echo "User not found.";
-        }
     }
 }
 
 
-session_start();
-
-if (isset($_SESSION['role'])) {
-    if ($_SESSION['role'] === 'admin') {
-        // Kyçur si admin, veprimet për admin
-        echo "You are logged in as an admin.";
-    } else {
-        // Kyçur si përdorues i thjeshtë, veprimet për përdoruesin e thjeshtë
-        echo "You are logged in as a regular user.";
-    }
-} else {
-    // Përdoruesi nuk është kyçur, veprimet për një vizitor të panjohur
-    echo "You are not logged in.";
 }
 
 
-$database = new $database();
-
-
+$database = new Database();
 $user = new User($database);
 
 
@@ -82,6 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) &&
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && isset($_POST["loginPassword"])) {
     $user->loginUser($_POST["loginUsername"], $_POST["loginPassword"]);
 }
+
+
 ?>
 
 <!DOCTYPE html>
