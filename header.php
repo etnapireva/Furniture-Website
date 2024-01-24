@@ -12,10 +12,10 @@
     </div>
     <nav class="nav-container">
         <div class="labels">
-            <a href="main.php"></a>
-            <a href="produktet.html">Produktet</a>
-            <a href="rrethnesh1.html">Rreth nesh</a>
-            <a href="kontakti.html">Na kontaktoni</a>
+            <a href="main.php">Home</a>
+            <a href="produktet.php">Produktet</a>
+            <a href="rrethnesh1.php">Rreth nesh</a>
+            <a href="kontakti.php">Na kontaktoni</a>
             <a href="login.php">Kyquni</a>
         </div>
     </nav>

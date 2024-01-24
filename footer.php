@@ -3,15 +3,15 @@
             <div class="footer-section">
                 <span class="section-title">Me shume informacion</span>
                 <a href="main.php">Faqja Kryesore</a>
-                <a href="rrethnesh1.html">Rreth Nesh</a>
-                <a href="kontakti.html">Kontakti</a>
+                <a href="rrethnesh1.php">Rreth Nesh</a>
+                <a href="kontakti.php">Kontakti</a>
                 <a href="https://www.google.com/maps/place/Shopping+Center/@42.5804138,21.5791574,19.29z/data=!4m6!3m5!1s0x1354e97970c00001:0xe61bd806fd271c52!8m2!3d42.5801333!4d21.579156!16s%2Fg%2F11kj8__xrb?entry=ttu">Lokacioni</a>
             </div>
             <div class="footer-section">
                 <span class="section-title">Rrjetet sociale</span>
                 <a href="https://www.facebook.com/halitismofficial" class="social-icon"><i class="fab fa-facebook"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@mobileriahaliti" class="social-icon"><i class="fab fa-tiktok"></i> TikTok</a>
-                <a href="https://www.instagram.com/haliti_s.m/?ref=www.localsbarguide.com&hl=da" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.instagram.com/mobileriahaliti/" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
         </div>
         <style>

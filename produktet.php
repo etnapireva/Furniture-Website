@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="produktet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furniture Store</title>
@@ -17,7 +18,7 @@ background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31
 
   </style>
 </head>
-
+<?php include 'header.php';?>
 
 <body>
   <header>
@@ -249,28 +250,7 @@ background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31
 </html>
 
 
-
-
-
-<footer class="footeri">
-    
-    <div class="copy">&copy; 2023</div>
-    <div class="linksfooteri">
-      <div class="links">
-        <span>Me shume informacion</span>
-        <a href="main.html">Faqja Kryesore</a>
-        <a href="rrethnesh1.html">Rreth Nesh</a>
-        <a href="kontakti.html">Kontakti</a>
-        <a href="https://www.google.com/maps/place/Shopping+Center/@42.5804138,21.5791574,19.29z/data=!4m6!3m5!1s0x1354e97970c00001:0xe61bd806fd271c52!8m2!3d42.5801333!4d21.579156!16s%2Fg%2F11kj8__xrb?entry=ttu">Lokacioni </a>
-      </div>
-      <div class="links">
-        <span>Rrjetet sociale</span>
-        <a class="foto11"   href="https://www.facebook.com/halitismofficial"><img src="Facebook Logo.png" width="30" alt=""> Na ndiqni në Facebook</a>
-        <a class="foto11" href="https://www.tiktok.com/@mobileriahaliti"><img src="TikTok logo.png" alt="" width="30"> Na ndiqni në TikTok</a>
-        <a class="foto11" href="https://www.instagram.com/haliti_s.m/?ref=www.localsbarguide.com&hl=da"><img src="Instagram Logo.png" alt="" width="30"> Na ndiqni në Instagram</a>
-      </div>
-    </div>
-  </footer>
+<?php include 'footer.php';?>
 
 </body>
 </html>
