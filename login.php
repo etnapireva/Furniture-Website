@@ -23,6 +23,11 @@ class User {
                 echo "Error: " . $sql . "<br>" . $this->db->conn->error;
             }
         }
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $role = "user"; 
+
+     $sql = "INSERT INTO users (username, password, role) VALUES ('$username', '$hashedPassword', '$role')";
     }
 
  
@@ -44,6 +49,22 @@ class User {
             echo "User not found.";
         }
     }
+}
+
+
+session_start();
+
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] === 'admin') {
+        // Kyçur si admin, veprimet për admin
+        echo "You are logged in as an admin.";
+    } else {
+        // Kyçur si përdorues i thjeshtë, veprimet për përdoruesin e thjeshtë
+        echo "You are logged in as a regular user.";
+    }
+} else {
+    // Përdoruesi nuk është kyçur, veprimet për një vizitor të panjohur
+    echo "You are not logged in.";
 }
 
 
