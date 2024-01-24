@@ -70,8 +70,13 @@ class User {
 }
 
 
+<<<<<<< HEAD
 $database = new Database();
+=======
+$database = new Database();  
+>>>>>>> def51e0c00f7edbbbf5bb609e4a0e5079f48a45d
 $user = new User($database);
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) && isset($_POST["registerPassword"]) && isset($_POST["confirmPassword"])) {
