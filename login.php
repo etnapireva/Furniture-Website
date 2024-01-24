@@ -68,10 +68,9 @@ if (isset($_SESSION['role'])) {
 }
 
 
-$database = new $database();
-
-
+$database = new Database();  
 $user = new User($database);
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) && isset($_POST["registerPassword"]) && isset($_POST["confirmPassword"])) {
