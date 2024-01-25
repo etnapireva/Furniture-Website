@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,46 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furniture Store</title>
   <link rel="stylesheet" href="styles.css">
-
-  <?php
-   include 'db.php';
-   
-   class Products {
-       private $db;
-   
-       public function __construct($db) {
-           $this->db = $db;
-       }
-   
-       public function getProducts() {
-           $sql = "SELECT product_id, price, description, image_path FROM products";
-           $result = $this->db->conn->query($sql);
-   
-           if ($result) {
-               while ($row = $result->fetch_assoc()) {
-                   $product_id = $row['product_id'];
-                   $description = $row['description'];
-                   $image_path = $row['image_path'];
-   
-                   // Output HTML with dynamic data
-                   echo "<div class='product'>";
-                   echo "<h2>$product_id</h2>";
-                   echo "<p>$description</p>";
-                   echo "<img src='$image_path' alt=''>";
-                   echo "</div>";
-               }
-           } else {
-               echo "Error: " . $this->db->conn->error;
-           }
-       }
-   }
-   
-   $database = new Database();
-   $products = new Products($database);
-   ?>
-   
-   
-  
 
   
 
@@ -62,8 +19,31 @@ background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31
 
   </style>
 </head>
+<?php
 
+include 'header.php';
 
+class Database {
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "limon";
+    public $conn;
+
+    public function __construct() {
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+    }
+
+    public function __destruct() {
+        $this->conn->close();
+    }
+}
+
+?>
 
 <body>
   <header>
@@ -79,7 +59,29 @@ background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31
   </header>
 
 
- 
+  <?php
+$database = new Database();
+$sql = "SELECT product_id, price, image_path, description FROM products";
+$result = $database->conn->query($sql);
+
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    echo '<div class="product" id="' . $row["product_id"] . '">';
+    echo '<img src="' . $row["image_path"] . '" alt=" ">';
+    echo '<p>"' . $row["description"] . '"</p>';
+    echo '<p>#' . $row["product_id"] . '</p>';
+    echo '</div>';
+  }
+} else {
+  echo "Nuk ka produkte në bazën e të dhënave.";
+}
+
+?>
+
+
+  
+
+  <hr>
 
   <main>
     
@@ -285,8 +287,8 @@ background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31
         </div>
         <div class="product" id='k135'>
           <img src="tavolina7.jpg" alt="">
-          <!-- <p>"Tavolina e zeze për bukë është një element i shquar që shton një ndjesi të thellë, moderne dhe të veçantë në kuzhinë. Ngjyra e zeze e bën atë të dallohet dhe të jetë pikë fokale. Me ndjesinë e saj të sofistikuar dhe moderne, kjo tavolinë i jep një prekje të veçantë ambientit të kuzhinës, duke sjellë një kontrast të bukur mes ngjyrave dhe duke shënuar një prezencë të fortë dhe të stilizuar."</p>
-          <p>#k135</p> -->
+          <p>"Tavolina e zeze për bukë është një element i shquar që shton një ndjesi të thellë, moderne dhe të veçantë në kuzhinë. Ngjyra e zeze e bën atë të dallohet dhe të jetë pikë fokale. Me ndjesinë e saj të sofistikuar dhe moderne, kjo tavolinë i jep një prekje të veçantë ambientit të kuzhinës, duke sjellë një kontrast të bukur mes ngjyrave dhe duke shënuar një prezencë të fortë dhe të stilizuar."</p>
+          <p>#k135</p>
         </div>
         
       </div>
