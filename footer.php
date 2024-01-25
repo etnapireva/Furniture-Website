@@ -66,6 +66,10 @@
   color: #000000;
 }
 
+.section-title a:hover{
+  background-color: black;
+}
+
 
 
 @media only screen and (min-width: 768px) {

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produktet</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="produktet.css">
 
   
 
@@ -17,8 +17,46 @@ body{
 background: linear-gradient(0deg, rgba(244,239,230,1) 0%, rgba(244,239,230,1) 31%, rgba(244,239,230,1) 100%);
 }
 
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.product {
+  width: 30%; 
+  margin: 10px; 
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: 200px; 
+  object-fit: cover;
+}
+.buy-button {
+  display: block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #DEB887;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.buy-button:hover {
+  background-color: #CD853F;
+}
+
+
+
+
   </style>
 </head>
+
 <?php
 
 include 'header.php';
@@ -58,18 +96,19 @@ class Database {
     </nav>
   </header>
 
-
+  <div class="product-container">
   <?php
 $database = new Database();
-$sql = "SELECT product_id, price, image_path, description FROM products";
+$sql = "SELECT product_id, price,  image_path,description FROM products";
 $result = $database->conn->query($sql);
 
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     echo '<div class="product" id="' . $row["product_id"] . '">';
     echo '<img src="' . $row["image_path"] . '" alt=" ">';
-    echo '<p>"' . $row["description"] . '"</p>';
     echo '<p>#' . $row["product_id"] . '</p>';
+    echo '<p>"' . $row["description"] . '"</p>';
+    echo '<a href="kontakti.php" class="buy-button">BLEJ</a>';
     echo '</div>';
   }
 } else {
@@ -78,14 +117,15 @@ if ($result->num_rows > 0) {
 
 ?>
 
-
+</div>
+</body>
   
 
   <hr>
 
   <main>
     
-    <section id="garnitura">
+    <!-- <section id="garnitura">
       <h2>Garnitura</h2>
       <div class="products">
         <div class="product" id='k100'>
@@ -295,7 +335,7 @@ if ($result->num_rows > 0) {
     </section>
   </main>
 </body>
-</html>
+</html> -->
 
 
 <?php include 'footer.php';?>
