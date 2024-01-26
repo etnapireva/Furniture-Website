@@ -1,4 +1,18 @@
 <?php include 'db.php';?>
+<?php if (isset($_GET['action']) && $_GET['action'] === 'fetch_messages') {
+    $sql = "SELECT * FROM messages ORDER BY created_at DESC";
+    $result = mysqli_query($conn, $sql);
+
+    $messages = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $messages[] = $row;
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($messages);
+    exit; // Stop further execution
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
