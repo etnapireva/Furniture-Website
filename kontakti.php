@@ -14,7 +14,8 @@
 
 <body>
     <form id="contactForm">
-      <input type="text" id="name" placeholder="Name">
+      <input type="text" id="name" placeholder="Emri">
+      <input type="text" id="numri" placeholder="Numri">
       <input type="email" id="email" placeholder="Email">
       <textarea type="message" id="message" placeholder="message" cols="30" rows="10"></textarea>
       <button id="butoni"  type="submit">Submit</button>
@@ -25,7 +26,7 @@
     const name=document.getElementById('name').value.trim();
     const email=document.getElementById('email').value.trim();
     const message=document.getElementById('message').value.trim();
-
+    const numri=document.getElementById('numri').value.trim();
    })
 
    
