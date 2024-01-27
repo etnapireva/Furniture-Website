@@ -73,6 +73,9 @@ $database->conn->close();
 const cardContainer = document.querySelector('.card-container');
 
 
+formData.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+
 formData.forEach(data => {
     const card = document.createElement('div');
     card.classList.add('card');
