@@ -14,7 +14,7 @@ class Database {
             die("Connection failed: " . $this->conn->connect_error);
         }
 
-        // Initialize the database (create necessary tables)
+       
         $this->initDatabase();
     }
 
@@ -29,15 +29,17 @@ class Database {
         )";
 
         if ($this->conn->query($sql) === TRUE) {
-            echo "Table created successfully.";
+            echo "";
         } else {
             echo "Error creating table: " . $this->conn->error;
         }
     }
 
-    public function __destruct() {
-        $this->conn->close();
-    }
+    /*public function __destruct() {
+        if ($this->conn && $this->conn->thread_id) {
+            $this->conn->close();
+        }
+    }*/
 }
 
 ?>
