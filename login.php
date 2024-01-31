@@ -32,43 +32,54 @@ class User {
             echo "Passwords do not match.";
         } else {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')";
-
+            
+            
+            $role = 'user';
+    
+            $sql = "INSERT INTO users (username, password, role) VALUES ('$username', '$hashedPassword', '$role')";
+    
             if ($this->db->conn->query($sql)) {
                 echo "<p>Registration successful! Now you can log in.</p>";
             } else {
                 echo "Error: " . $sql . "<br>" . $this->db->conn->error;
             }
         }
-
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $role = "user"; 
-
-     $sql = "INSERT INTO users (username, password, role) VALUES ('$username', '$hashedPassword', '$role')";
     }
+    
 
  
     public function loginUser($username, $password) {
         $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = $this->db->conn->query($sql);
-
+    
         if ($result && $result->num_rows > 0) {
             $user = $result->fetch_assoc();
-
+    
             if (password_verify($password, $user['password'])) {
-               
-                $_SESSION['role'] = $user['role'];
+                if ($user['role'] === 'admin') {
+                    
+                    $_SESSION['role'] = 'admin';
+    
+                    
+                    header("Location: dashboard.php");
+                    exit();
+                } else {
+                 
+                    $_SESSION['role'] = 'user';
+                }
+    
                 header("Location: main.php");
                 exit();
             } else {
                 echo "Incorrect password.";
             }
+        }
     }
+    
+    
+    
+
 }
-
-
-}
-
 
 
 $database = new Database();
@@ -76,6 +87,9 @@ $database = new Database();
 $database = new Database();  
 
 $user = new User($database);
+
+    
+    
 
 
 
@@ -87,6 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registerUsername"]) &&
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && isset($_POST["loginPassword"])) {
     $user->loginUser($_POST["loginUsername"], $_POST["loginPassword"]);
 }
+
+
 
 
 ?>
@@ -158,17 +174,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && is
 
     <div class="login-container">
         <form id="loginForm" method="post">
-            <input type="text" name="loginUsername" id="loginUsername" placeholder="Username">
-            <input type="password" name="loginPassword" id="loginPassword" placeholder="Password">
+            <input type="text" name="loginUsername" id="loginUsername" placeholder="Username" required>
+            <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
     </div>
 
     <div class="registration-container">
         <form id="registrationForm" method="post">
-            <input type="text" name="registerUsername" id="registerUsername" placeholder="Username">
-            <input type="password" name="registerPassword" id="registerPassword" placeholder="Password">
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+            <input type="text" name="registerUsername" id="registerUsername" placeholder="Username" required>
+            <input type="password" name="registerPassword" id="registerPassword" placeholder="Password" required>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+            <?php
+        
+        if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+            
+            echo '<select name="role" id="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                  </select>';
+        } else {
+            
+            echo '<input type="hidden" name="role" value="user">';
+        }
+        ?>
             <button type="submit">Register</button>
         </form>
     </div>

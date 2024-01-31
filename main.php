@@ -15,7 +15,7 @@
         <div class="mainpage">
             <h1>Mobileria Haliti</h1>
             <p>Lider ne kualitet.</p>
-            <div><a class="butoni" href="produktet.html">BLEJ KETU<a\></a></div>
+            <div><a class="butoni" href="produktet.php">BLEJ KETU<a\></a></div>
         </div>
 
         <div class="about-us">

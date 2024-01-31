@@ -16,7 +16,20 @@
             <a href="produktet.php">Produktet</a>
             <a href="rrethnesh1.php">Rreth nesh</a>
             <a href="kontakti.php">Na kontaktoni</a>
-            <a href="login.php">Kyquni</a>
+            <?php
+            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                echo '<a href="dashboard.php">Dashboard</a>';
+            }
+            ?>
+            
+            <?php
+            // e shikon a eshte i kyqur
+            if (isset($_SESSION['role'])) {
+                echo '<a href="logout.php">Logout</a>';
+            } else {
+              echo '<a href="login.php">Kyquni</a>';
+          }
+            ?>
         </div>
     </nav>
 </header>
