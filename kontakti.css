@@ -1,4 +1,6 @@
 .contactForm {
+  display: column;
+  flex-wrap: wrap;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -15,6 +17,7 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 
 @media (min-width: 481px) and (max-width: 767px) {
   body {

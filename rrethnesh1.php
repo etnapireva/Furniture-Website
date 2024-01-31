@@ -11,11 +11,9 @@
 <?php include 'header.php';?>
 
 	<section class="about">
-		<h1>Rreth nesh</h1>
-		
 		<div class="about-info">
 			<div class="about-img">
-				<img src="Logo.jpeg" alt="Geeksforgeeks">
+				<img src="Logo.jpeg" alt="">
 			</div>
 			<div>
 	<p>

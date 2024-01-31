@@ -86,14 +86,14 @@ class Database {
 <body>
   <header>
     <h1>Produktet</h1>
-    <nav>
+    <!-- <nav>
       <ul>
         <li><a href="#garnitura">Garnitura</a></li>
         <li><a href="#dhomagjumi">Dhoma Gjumi</a></li>
         <li><a href="#kuzhina">Kuzhina</a></li>
         <li><a href="#tavolina">Tavolina Buke</a></li>
       </ul>
-    </nav>
+    </nav> -->
   </header>
 
   <div class="product-container">

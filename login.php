@@ -185,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && is
             <input type="text" name="registerUsername" id="registerUsername" placeholder="Username" required>
             <input type="password" name="registerPassword" id="registerPassword" placeholder="Password" required>
             <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
-            <?php
+            <!-- <?php
         
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             
@@ -197,7 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginUsername"]) && is
             
             echo '<input type="hidden" name="role" value="user">';
         }
-        ?>
+        ?> -->
             <button type="submit">Register</button>
         </form>
     </div>
