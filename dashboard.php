@@ -3,32 +3,38 @@
 include 'db.php'; 
 
 
-$database = new Database();
+class FormDataRetriever {
+    private $database;
 
-
-$query = "SELECT * FROM form_submissions";
-$result = $database->conn->query($query);
-
-
-if ($result->num_rows > 0) {
-
-    $data = array();
-
-    
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
+    public function __construct(Database $database) {
+        $this->database = $database;
     }
 
-    
-    echo '<script>';
-    echo 'const formData = ' . json_encode($data) . ';';
-    echo '</script>';
-} else {
-    echo '<script>';
-    echo 'const formData = [];'; 
-    echo '</script>';
+    public function getFormData() {
+        $query = "SELECT * FROM form_submissions";
+        $result = $this->database->conn->query($query);
+
+        if ($result->num_rows > 0) {
+            $data = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+
+            return $data;
+        } else {
+            return [];
+        }
+    }
 }
 
+$database = new Database();
+$formDataRetriever = new FormDataRetriever($database);
+$formData = $formDataRetriever->getFormData();
+
+echo '<script>';
+echo 'const formData = ' . json_encode($formData) . ';';
+echo '</script>';
 
 $database->conn->close();
 
