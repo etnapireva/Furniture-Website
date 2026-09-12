@@ -147,8 +147,8 @@ body {
   justify-content: flex-start;
 }
 
-.words .word {
-  display: inline-block;
+.btn.words {
+  flex-wrap: nowrap;
 }
 
 .kicker {
