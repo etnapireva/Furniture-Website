@@ -130,6 +130,10 @@ body {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 .words {
   display: flex;
   flex-wrap: wrap;
