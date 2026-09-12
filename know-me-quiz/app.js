@@ -10,6 +10,24 @@
       .replaceAll("{her}", cfg.herName)
       .replaceAll("{his}", cfg.hisName);
 
+  /* Space glyphs in some variable webfonts collapse to zero width.
+     Split on whitespace and use flex gap so words never jam together. */
+  function setSpacedText(el, text) {
+    const value = String(text);
+    el.setAttribute("aria-label", value);
+    el.textContent = "";
+    value
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .forEach((word) => {
+        const span = document.createElement("span");
+        span.className = "word";
+        span.textContent = word;
+        el.appendChild(span);
+      });
+  }
+
   const els = {
     start: document.getElementById("screen-start"),
     quiz: document.getElementById("screen-quiz"),
@@ -68,17 +86,20 @@
   function renderQuestion() {
     locked = false;
     const item = questions[index];
-    els.progress.textContent = fill(cfg.progressLabel)
-      .replace("{n}", String(index + 1))
-      .replace("{total}", String(questions.length));
-    els.question.textContent = item.q;
+    setSpacedText(
+      els.progress,
+      fill(cfg.progressLabel)
+        .replace("{n}", String(index + 1))
+        .replace("{total}", String(questions.length))
+    );
+    setSpacedText(els.question, item.q);
     renderDots();
     els.choices.innerHTML = "";
     item.choices.forEach((label, i) => {
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "choice";
-      btn.textContent = label;
+      btn.className = "choice words left";
+      setSpacedText(btn, label);
       btn.addEventListener("click", () => onPick(i, btn));
       els.choices.appendChild(btn);
     });
@@ -119,14 +140,17 @@
     const total = questions.length;
     const band = bandFor(score);
     const msg = cfg.ending[band];
-    els.endScore.textContent = fill(cfg.scoreLabel)
-      .replace("{score}", String(score))
-      .replace("{total}", String(total));
-    els.endHeading.textContent = fill(msg.heading);
-    els.endBody.textContent = fill(msg.body);
+    setSpacedText(
+      els.endScore,
+      fill(cfg.scoreLabel)
+        .replace("{score}", String(score))
+        .replace("{total}", String(total))
+    );
+    setSpacedText(els.endHeading, fill(msg.heading));
+    setSpacedText(els.endBody, fill(msg.body));
     els.scoreHearts.textContent = "♥".repeat(score) + "♡".repeat(Math.max(0, total - score));
-    els.footer.textContent = fill(cfg.footerNote);
-    els.btnRetry.textContent = cfg.retryButton;
+    setSpacedText(els.footer, fill(cfg.footerNote));
+    setSpacedText(els.btnRetry, cfg.retryButton);
     show("end");
   }
 
@@ -137,10 +161,10 @@
     renderQuestion();
   }
 
-  els.kicker.textContent = "vetëm për ty";
-  els.title.textContent = cfg.title;
-  els.intro.textContent = fill(cfg.intro);
-  els.btnStart.textContent = cfg.startButton;
+  setSpacedText(els.kicker, "vetëm për ty");
+  setSpacedText(els.title, cfg.title);
+  setSpacedText(els.intro, fill(cfg.intro));
+  setSpacedText(els.btnStart, cfg.startButton);
   els.btnStart.addEventListener("click", startQuiz);
   els.btnRetry.addEventListener("click", startQuiz);
 

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -22,28 +22,28 @@
 
     <main class="shell">
       <section class="card" id="screen-start">
-        <p class="kicker" id="kicker">për ty</p>
-        <h1 id="title">How well do you know me?</h1>
-        <p class="lede" id="intro"></p>
-        <button type="button" class="btn primary" id="btn-start">Fillo kuizin</button>
+        <p class="kicker words" id="kicker">për ty</p>
+        <h1 class="words" id="title">How well do you know me?</h1>
+        <p class="lede words" id="intro"></p>
+        <button type="button" class="btn primary words" id="btn-start">Fillo kuizin</button>
       </section>
 
       <section class="card hidden" id="screen-quiz" aria-live="polite">
         <div class="quiz-top">
-          <p class="progress-text" id="progress-text"></p>
+          <p class="progress-text words" id="progress-text"></p>
           <div class="dots" id="dots"></div>
         </div>
-        <h2 class="question" id="question"></h2>
+        <h2 class="question words left" id="question"></h2>
         <div class="choices" id="choices"></div>
       </section>
 
       <section class="card hidden" id="screen-end">
-        <p class="kicker score" id="end-score"></p>
-        <h2 class="end-heading" id="end-heading"></h2>
-        <p class="lede" id="end-body"></p>
+        <p class="kicker score words" id="end-score"></p>
+        <h2 class="end-heading words" id="end-heading"></h2>
+        <p class="lede words" id="end-body"></p>
         <div class="score-hearts" id="score-hearts" aria-hidden="true"></div>
-        <button type="button" class="btn primary" id="btn-retry">Provo sërish</button>
-        <p class="footer-note" id="footer-note"></p>
+        <button type="button" class="btn primary words" id="btn-retry">Provo sërish</button>
+        <p class="footer-note words" id="footer-note"></p>
       </section>
     </main>
 
