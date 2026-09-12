@@ -139,6 +139,12 @@ body {
   font-weight: 600;
 }
 
+.kicker.score {
+  text-transform: none;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+}
+
 h1,
 .question,
 .end-heading {
@@ -290,7 +296,23 @@ h1 {
   font-style: italic;
 }
 
-@media (min-width: 520px) {
+@media (max-width: 520px) {
+  .shell {
+    align-items: stretch;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom));
+  }
+
+  .card {
+    width: 100%;
+    min-height: calc(100dvh - 28px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 20px 24px;
+  }
+}
+
+@media (min-width: 521px) {
   .card {
     padding: 40px 36px 32px;
   }
